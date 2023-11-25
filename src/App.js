@@ -24,13 +24,13 @@ setName(event.target.value)
          display=<input type="text" className="border-2" onChange={handleChange} value={name} placeholder="Enter your Name"/>
     }
   const saveToDb=(name)=>{
-    Axios.post("http://localhost/attendance",{
+    Axios.post("http://52.201.239.183/attendance",{
         name
     })
   }
 
   const guests=async()=>{
-    let guests=await Axios.get("http://localhost/guests")
+    let guests=await Axios.get("http://52.201.239.183/guests")
  
     setGuestEntry(guests.data)
     
@@ -38,7 +38,7 @@ setName(event.target.value)
    
     
   }
-  console.log(guestEntry[0]._id)
+  
   useEffect(()=>{
     guests()
 },[])
